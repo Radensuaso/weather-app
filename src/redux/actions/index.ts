@@ -118,6 +118,7 @@ export const removeFromWatchList = (city: string) => ({
 });
 
 //Change Url
+
 export const changeToMetric = () => ({
   type: METRIC_API,
 });
