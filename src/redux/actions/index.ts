@@ -13,7 +13,7 @@ export const ADD_TO_WATCH_LIST = "ADD_TO_WATCH_LIST";
 export const REMOVE_FROM_WATCH_LIST = "REMOVE_FROM_WATCH_LIST";
 
 // Fetch eight days forecast
-export const fetchEightDays = (url: any, query: string) => {
+export const fetchEightDays = (url: string, query: string) => {
   return async (dispatch: Dispatch, getState: () => ReduxStore) => {
     try {
       dispatch({
@@ -60,7 +60,7 @@ export const fetchEightDays = (url: any, query: string) => {
 };
 
 // Fetch sixteen days forecast
-export const fetchSixteenDays = (url: any, query: string) => {
+export const fetchSixteenDays = (url: string, query: string) => {
   return async (dispatch: Dispatch, getState: () => ReduxStore) => {
     try {
       dispatch({
@@ -106,6 +106,7 @@ export const fetchSixteenDays = (url: any, query: string) => {
   };
 };
 
+// Watch List
 export const addToWatchList = (city: string) => ({
   type: ADD_TO_WATCH_LIST,
   payload: city,
@@ -114,4 +115,13 @@ export const addToWatchList = (city: string) => ({
 export const removeFromWatchList = (city: string) => ({
   type: REMOVE_FROM_WATCH_LIST,
   payload: city,
+});
+
+//Change Url
+export const changeToMetric = () => ({
+  type: METRIC_API,
+});
+
+export const changeToImperial = () => ({
+  type: IMPERIAL_API,
 });
