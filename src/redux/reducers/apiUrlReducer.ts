@@ -1,24 +1,22 @@
+import { AnyAction } from "redux";
 import { METRIC_API, IMPERIAL_API } from "../actions";
 import initialState from "../initialState";
 
-const libraryReducer = (state = initialState.library, action) => {
+const apiUrlReducer = (state = initialState.apiUrl, action: AnyAction) => {
   switch (action.type) {
-    case ADD_TO_LIBRARY:
+    case METRIC_API:
       return {
         ...state,
-        libraryList: [...state.libraryList, action.payload],
+        url: process.env.REACT_APP_API_METRIC,
       };
-    case REMOVE_FROM_LIBRARY:
+    case IMPERIAL_API:
       return {
         ...state,
-        libraryList: state.libraryList.filter(
-          (l) => l.id !== action.payload.id
-        ),
-        // Replacing state as an Array from filter
+        url: process.env.REACT_APP_API_IMPERIAL,
       };
     default:
       return state;
   }
 };
 
-export default libraryReducer;
+export default apiUrlReducer;
