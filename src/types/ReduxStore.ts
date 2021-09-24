@@ -1,23 +1,17 @@
 import City from "./City";
 import Day from "./Day";
 
+interface InnerStore {
+  list: Day[];
+  city: null | City;
+  loading: boolean;
+  error: boolean;
+}
+
 interface ReduxStore {
-  apiUrl: { url: string; query: string };
-  eightDays: {
-    list: Day[];
-    city: null | City;
-    loading: boolean;
-    error: boolean;
-  };
-  sixteenDays: {
-    list: Day[];
-    city: null | City;
-    loading: boolean;
-    error: boolean;
-  };
-  watchList: {
-    cities: City[];
-  };
+  apiUrl: { url: string; search: string };
+  sixteenDays: InnerStore;
+  watchList: { cities: InnerStore[] };
 }
 
 export default ReduxStore;

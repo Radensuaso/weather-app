@@ -1,5 +1,5 @@
 import { AnyAction } from "redux";
-import { METRIC_API, IMPERIAL_API } from "../actions";
+import { METRIC_API, IMPERIAL_API, CHANGE_SEARCH } from "../actions";
 import initialState from "../initialState";
 
 const apiUrlReducer = (state = initialState.apiUrl, action: AnyAction) => {
@@ -13,6 +13,11 @@ const apiUrlReducer = (state = initialState.apiUrl, action: AnyAction) => {
       return {
         ...state,
         url: process.env.REACT_APP_API_IMPERIAL,
+      };
+    case CHANGE_SEARCH:
+      return {
+        ...state,
+        search: action.payload,
       };
     default:
       return state;

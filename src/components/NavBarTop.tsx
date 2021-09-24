@@ -9,10 +9,17 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { TiWeatherSunny } from "react-icons/ti";
-import { useDispatch } from "react-redux";
-import { changeToMetric, changeToImperial } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changeToMetric,
+  changeToImperial,
+  changeSearch,
+} from "../redux/actions";
+import ReduxStore from "../types/ReduxStore";
+import { ChangeEvent } from "react";
 
 const NavBarTop = () => {
+  const search = useSelector((state: ReduxStore) => state.apiUrl.search);
   const dispatch = useDispatch();
 
   return (
@@ -49,6 +56,10 @@ const NavBarTop = () => {
               placeholder="Search a place"
               className="mr-2"
               aria-label="Search"
+              value={search}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                dispatch(changeSearch(e.target.value))
+              }
             />
             <Button variant="outline-light">Search</Button>
           </Form>

@@ -1,9 +1,5 @@
 import { AnyAction } from "redux";
-import {
-  FILL_SIXTEEN_DAYS,
-  LOADING_SIXTEEN_DAYS,
-  ERROR_SIXTEEN_DAYS,
-} from "../actions";
+import { FILL_SIXTEEN_DAYS, LOADING, ERROR } from "../actions";
 import initialState from "../initialState";
 
 const sixteenDaysReducer = (
@@ -17,12 +13,12 @@ const sixteenDaysReducer = (
         list: action.payload.list,
         city: action.payload.city,
       };
-    case LOADING_SIXTEEN_DAYS:
+    case LOADING:
       return {
         ...state,
         loading: action.payload,
       };
-    case ERROR_SIXTEEN_DAYS:
+    case ERROR:
       return {
         ...state,
         error: action.payload,

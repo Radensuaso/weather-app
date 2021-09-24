@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 
-const DayCard = () => (
+const DayCardSmall = () => (
   <Card>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
@@ -13,4 +13,4 @@ const DayCard = () => (
   </Card>
 );
 
-export default DayCard;
+export default DayCardSmall;

@@ -1,13 +1,7 @@
 import ReduxStore from "../../types/ReduxStore";
 
 const initialState: ReduxStore = {
-  apiUrl: { url: process.env.REACT_APP_API_METRIC!, query: "" },
-  eightDays: {
-    list: [],
-    city: null,
-    loading: false,
-    error: false,
-  },
+  apiUrl: { url: process.env.REACT_APP_API_METRIC!, search: "" },
   sixteenDays: {
     list: [],
     city: null,
