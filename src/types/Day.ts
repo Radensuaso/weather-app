@@ -3,7 +3,7 @@ import Weather from "./Weather";
 import Wind from "./Wind";
 
 interface Day {
-  dt: 1632484800;
+  dt: number;
   main: MainInfo;
   weather: Weather[];
   clouds: {

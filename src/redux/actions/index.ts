@@ -21,7 +21,9 @@ export const fetchEightDays = (url: string, query: string) => {
         payload: true,
       });
 
-      const response = await fetch(`${url}q=${query}&cnt=8`);
+      const response = await fetch(
+        `${url}q=${query ? query : "boliqueime"}&cnt=8`
+      );
       if (response.ok) {
         const fetchedContent = await response.json();
         dispatch({
@@ -68,7 +70,9 @@ export const fetchSixteenDays = (url: string, query: string) => {
         payload: true,
       });
 
-      const response = await fetch(`${url}q=${query}&cnt=16`);
+      const response = await fetch(
+        `${url}q=${query ? query : "boliqueime"}&cnt=16`
+      );
       if (response.ok) {
         const fetchedContent = await response.json();
         dispatch({

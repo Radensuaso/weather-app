@@ -2,7 +2,7 @@ import City from "./City";
 import Day from "./Day";
 
 interface ReduxStore {
-  apiUrl: { url: string };
+  apiUrl: { url: string; query: string };
   eightDays: {
     list: Day[];
     city: null | City;
