@@ -1,6 +1,6 @@
-import State from "../../types/State";
+import ReduxStore from "../../types/ReduxStore";
 
-const initialState: State = {
+const initialState: ReduxStore = {
   apiUrl: process.env.REACT_APP_API_METRIC,
   eightDays: {
     list: [],

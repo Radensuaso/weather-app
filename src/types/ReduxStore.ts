@@ -1,7 +1,7 @@
 import City from "./City";
 import Day from "./Day";
 
-interface State {
+interface ReduxStore {
   apiUrl: any;
   eightDays: {
     list: Day[];
@@ -20,4 +20,4 @@ interface State {
   };
 }
 
-export default State;
+export default ReduxStore;
