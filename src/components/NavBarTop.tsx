@@ -10,17 +10,29 @@ import {
 import { Link } from "react-router-dom";
 import { TiWeatherSunny } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
-import { ChangeEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 import {
   changeToMetric,
   changeToImperial,
   changeSearch,
+  fetchNextDays,
 } from "../redux/actions";
 import ReduxStore from "../types/ReduxStore";
+import { useEffect } from "react";
 
 const NavBarTop = () => {
   const search = useSelector((state: ReduxStore) => state.queries.search);
+  const apiUrl = useSelector((state: ReduxStore) => state.queries.apiUrl);
   const dispatch = useDispatch();
+
+  const searchCity = (e: FormEvent) => {
+    e.preventDefault();
+    dispatch(fetchNextDays(apiUrl, search));
+  };
+
+  useEffect(() => {
+    dispatch(fetchNextDays(apiUrl, search));
+  }, [apiUrl]);
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
@@ -50,7 +62,7 @@ const NavBarTop = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={searchCity}>
             <FormControl
               type="search"
               placeholder="Search a place"

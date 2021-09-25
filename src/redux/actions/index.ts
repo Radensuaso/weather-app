@@ -38,7 +38,7 @@ export const changeSearch = (search: string) => ({
 });
 
 // Fetch sixteen days forecast
-export const fetchNextDays = (url: string, query: string) => {
+export const fetchNextDays = (apiUrl: string, search: string) => {
   return async (dispatch: Dispatch, getState: () => ReduxStore) => {
     try {
       dispatch({
@@ -47,7 +47,7 @@ export const fetchNextDays = (url: string, query: string) => {
       });
 
       const response = await fetch(
-        `${url}q=${query ? query : "boliqueime"}&cnt=16`
+        apiUrl + (search.length > 0 ? search : "boliqueime")
       );
       if (response.ok) {
         const fetchedContent = await response.json();
