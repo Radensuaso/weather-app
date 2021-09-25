@@ -17,7 +17,7 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-  apiUrl: queriesReducer,
+  queries: queriesReducer,
   nextDaysReducer: nextDaysReducer,
   watchList: watchListReducer,
 });

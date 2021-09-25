@@ -56,10 +56,10 @@ const NavBarTop = () => {
               placeholder="Search a place"
               className="mr-2"
               aria-label="Search"
-              // value={search}
-              // onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              //   dispatch(changeSearch(e.target.value))
-              // }
+              value={search}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                dispatch(changeSearch(e.target.value))
+              }
             />
             <Button variant="outline-light">Search</Button>
           </Form>
