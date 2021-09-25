@@ -1,10 +1,15 @@
-import NextDays from "../components/NextDays";
+import NextDaysRow from "../components/NextDaysRow";
+import { useSelector } from "react-redux";
+import ReduxStore from "../types/ReduxStore";
 
-const Home = () => (
-  <>
-    <h1 className="text-center mb-4">Weather App</h1>
-    <NextDays />
-  </>
-);
+const Home = () => {
+  const nextDays = useSelector((state: ReduxStore) => state.nextDays);
+  return (
+    <>
+      <h1 className="text-center mb-4">Weather App</h1>
+      <NextDaysRow nextDays={nextDays} />
+    </>
+  );
+};
 
 export default Home;

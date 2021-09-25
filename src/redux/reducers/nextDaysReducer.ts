@@ -1,13 +1,10 @@
 import { AnyAction } from "redux";
-import { FILL_SIXTEEN_DAYS, LOADING, ERROR } from "../actions";
+import { FILL_NEXT_DAYS, LOADING, ERROR } from "../actions";
 import initialState from "../initialState";
 
-const sixteenDaysReducer = (
-  state = initialState.sixteenDays,
-  action: AnyAction
-) => {
+const nextDaysReducer = (state = initialState.nextDays, action: AnyAction) => {
   switch (action.type) {
-    case FILL_SIXTEEN_DAYS:
+    case FILL_NEXT_DAYS:
       return {
         ...state,
         list: action.payload.list,
@@ -29,4 +26,4 @@ const sixteenDaysReducer = (
   }
 };
 
-export default sixteenDaysReducer;
+export default nextDaysReducer;

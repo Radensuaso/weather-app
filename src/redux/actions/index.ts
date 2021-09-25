@@ -3,7 +3,7 @@ import ReduxStore from "../../types/ReduxStore";
 
 export const METRIC_API = "METRIC_API";
 export const IMPERIAL_API = "IMPERIAL_API";
-export const FILL_SIXTEEN_DAYS = "FILL_SIXTEEN_DAYS";
+export const FILL_NEXT_DAYS = "FILL_NEXT_DAYS";
 export const LOADING = "LOADING";
 export const ERROR = "ERROR";
 export const ADD_TO_WATCH_LIST = "ADD_TO_WATCH_LIST";
@@ -38,7 +38,7 @@ export const changeSearch = (search: string) => ({
 });
 
 // Fetch sixteen days forecast
-export const fetchSixteenDays = (url: string, query: string) => {
+export const fetchNextDays = (url: string, query: string) => {
   return async (dispatch: Dispatch, getState: () => ReduxStore) => {
     try {
       dispatch({
@@ -52,7 +52,7 @@ export const fetchSixteenDays = (url: string, query: string) => {
       if (response.ok) {
         const fetchedContent = await response.json();
         dispatch({
-          type: FILL_SIXTEEN_DAYS,
+          type: FILL_NEXT_DAYS,
           payload: fetchedContent,
         });
         dispatch({

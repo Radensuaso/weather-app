@@ -1,17 +1,22 @@
 import City from "./City";
 import Day from "./Day";
 
-interface InnerStore {
+export interface Queries {
+  apiUrl: string;
+  search: string;
+}
+
+export interface NextDays {
   list: Day[];
   city: null | City;
   loading: boolean;
   error: boolean;
 }
 
-interface ReduxStore {
-  apiUrl: { url: string; search: string };
-  sixteenDays: InnerStore;
-  watchList: { cities: InnerStore[] };
+export interface ReduxStore {
+  queries: Queries;
+  nextDays: NextDays;
+  watchList: { cities: NextDays[] };
 }
 
 export default ReduxStore;

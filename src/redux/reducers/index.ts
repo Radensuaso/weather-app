@@ -2,8 +2,8 @@ import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
-import apiUrlReducer from "./apiUrlReducer";
-import sixteenDaysReducer from "./sixteenDaysReducer";
+import queriesReducer from "./queriesReducer";
+import nextDaysReducer from "./nextDaysReducer";
 import watchListReducer from "./watchListReducer";
 
 const persistConfig = {
@@ -17,8 +17,8 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-  apiUrl: apiUrlReducer,
-  sixteenDays: sixteenDaysReducer,
+  apiUrl: queriesReducer,
+  nextDaysReducer: nextDaysReducer,
   watchList: watchListReducer,
 });
 
