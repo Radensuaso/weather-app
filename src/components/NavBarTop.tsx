@@ -32,6 +32,7 @@ const NavBarTop = () => {
 
   useEffect(() => {
     dispatch(fetchNextDays(apiUrl, search));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiUrl]);
 
   return (
