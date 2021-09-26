@@ -2,7 +2,7 @@ import MainInfo from "./MainInfo";
 import Weather from "./Weather";
 import Wind from "./Wind";
 
-interface List {
+interface ListItem {
   dt: number;
   main: MainInfo;
   weather: Weather[];
@@ -18,4 +18,4 @@ interface List {
   dt_txt: string;
 }
 
-export default List;
+export default ListItem;

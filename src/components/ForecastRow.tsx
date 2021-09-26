@@ -23,8 +23,8 @@ const ForecastRow = ({ forecast }: ForecastRowProps) => {
       </Col>
       <Col xs={12}>
         <ListGroup>
-          {forecast.fullInfo?.list.map((singleForecast, i) => (
-            <ForecastListItem key={i} singleForecast={singleForecast} />
+          {forecast.fullInfo?.list.map((listItem, i) => (
+            <ForecastListItem key={i} listItem={listItem} />
           ))}
         </ListGroup>
       </Col>
