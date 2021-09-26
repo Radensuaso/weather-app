@@ -15,7 +15,7 @@ const watchListReducer = (
     case REMOVE_FROM_WATCH_LIST:
       return {
         ...state,
-        cities: state.cities.filter((c) => c.city?.id !== action.payload.id),
+        cities: state.cities.filter((c) => c !== action.payload),
       };
     default:
       return state;

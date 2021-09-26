@@ -1,6 +1,7 @@
 import { Alert, Col, ListGroup, Row } from "react-bootstrap";
 import { NextDays } from "../types/ReduxStore";
-import DayCardLarge from "./DayCardLarge";
+import DayCard from "./DayCard";
+import DayListItem from "./DayListItem";
 import Loading from "./Loading";
 
 interface NextDaysProps {
@@ -18,12 +19,12 @@ const NextDaysRow = ({ nextDays }: NextDaysProps) => {
         <h2>{nextDays.city?.name}</h2>
       </Col>
       <Col xs={12} md={4}>
-        <DayCardLarge />
+        <DayCard />
       </Col>
       <Col xs={12}>
         <ListGroup>
-          {nextDays.list?.map((day) => (
-            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+          {nextDays.list?.map((day, i) => (
+            <DayListItem key={i} day={day} />
           ))}
         </ListGroup>
       </Col>

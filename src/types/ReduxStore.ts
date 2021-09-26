@@ -16,7 +16,7 @@ export interface NextDays {
 export interface ReduxStore {
   queries: Queries;
   nextDays: NextDays;
-  watchList: { cities: NextDays[] };
+  watchList: { cities: number[] };
 }
 
 export default ReduxStore;
