@@ -16,7 +16,7 @@ const ForecastRow = ({ forecast }: ForecastRowProps) => {
   ) : (
     <Row>
       <Col xs={12} md={8}>
-        <h2>{forecast.fullInfo?.city.name}</h2>
+        <h2>{`${forecast.fullInfo?.city.name}, ${forecast.fullInfo?.city.country}`}</h2>
       </Col>
       <Col xs={12} md={4}>
         <ForecastCard />
