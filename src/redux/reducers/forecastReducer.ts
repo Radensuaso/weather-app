@@ -1,14 +1,13 @@
 import { AnyAction } from "redux";
-import { FILL_NEXT_DAYS, LOADING, ERROR } from "../actions";
+import { FILL_FORECAST, LOADING, ERROR } from "../actions";
 import initialState from "../initialState";
 
-const nextDaysReducer = (state = initialState.nextDays, action: AnyAction) => {
+const forecastReducer = (state = initialState.forecast, action: AnyAction) => {
   switch (action.type) {
-    case FILL_NEXT_DAYS:
+    case FILL_FORECAST:
       return {
         ...state,
-        list: action.payload.list,
-        city: action.payload.city,
+        fullInfo: action.payload,
       };
     case LOADING:
       return {
@@ -26,4 +25,4 @@ const nextDaysReducer = (state = initialState.nextDays, action: AnyAction) => {
   }
 };
 
-export default nextDaysReducer;
+export default forecastReducer;

@@ -1,21 +1,19 @@
-import City from "./City";
-import Day from "./Day";
+import FullInfo from "./FullInfo";
 
 export interface Queries {
   apiUrl: string;
   search: string;
 }
 
-export interface NextDays {
-  list: Day[];
-  city: null | City;
+export interface Forecast {
+  fullInfo: FullInfo | null;
   loading: boolean;
   error: boolean;
 }
 
 export interface ReduxStore {
   queries: Queries;
-  nextDays: NextDays;
+  forecast: Forecast;
   watchList: { cities: number[] };
 }
 

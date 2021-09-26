@@ -3,7 +3,7 @@ import { persistReducer } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
 import queriesReducer from "./queriesReducer";
-import nextDaysReducer from "./nextDaysReducer";
+import forecastReducer from "./forecastReducer";
 import watchListReducer from "./watchListReducer";
 
 const persistConfig = {
@@ -18,7 +18,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
   queries: queriesReducer,
-  nextDays: nextDaysReducer,
+  forecast: forecastReducer,
   watchList: watchListReducer,
 });
 

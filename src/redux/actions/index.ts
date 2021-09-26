@@ -3,7 +3,7 @@ import ReduxStore from "../../types/ReduxStore";
 
 export const METRIC_API = "METRIC_API";
 export const IMPERIAL_API = "IMPERIAL_API";
-export const FILL_NEXT_DAYS = "FILL_NEXT_DAYS";
+export const FILL_FORECAST = "FILL_FORECAST";
 export const LOADING = "LOADING";
 export const ERROR = "ERROR";
 export const ADD_TO_WATCH_LIST = "ADD_TO_WATCH_LIST";
@@ -52,7 +52,7 @@ export const fetchNextDays = (apiUrl: string, search: string) => {
       if (response.ok) {
         const fetchedContent = await response.json();
         dispatch({
-          type: FILL_NEXT_DAYS,
+          type: FILL_FORECAST,
           payload: fetchedContent,
         });
         dispatch({

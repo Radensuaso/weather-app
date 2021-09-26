@@ -1,11 +1,11 @@
-import NextDaysRow from "../components/NextDaysRow";
+import ForecastRow from "../components/ForecastRow";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import ReduxStore from "../types/ReduxStore";
 import { fetchNextDays } from "../redux/actions";
 
 const Home = () => {
-  const nextDays = useSelector((state: ReduxStore) => state.nextDays);
+  const forecast = useSelector((state: ReduxStore) => state.forecast);
   const apiUrl = useSelector((state: ReduxStore) => state.queries.apiUrl);
   const search = useSelector((state: ReduxStore) => state.queries.search);
 
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center mb-4">Weather App</h1>
-      <NextDaysRow nextDays={nextDays} />
+      <ForecastRow forecast={forecast} />
     </>
   );
 };

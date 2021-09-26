@@ -2,7 +2,7 @@ import MainInfo from "./MainInfo";
 import Weather from "./Weather";
 import Wind from "./Wind";
 
-interface Day {
+interface List {
   dt: number;
   main: MainInfo;
   weather: Weather[];
@@ -18,4 +18,4 @@ interface Day {
   dt_txt: string;
 }
 
-export default Day;
+export default List;

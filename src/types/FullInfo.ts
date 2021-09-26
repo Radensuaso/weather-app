@@ -1,11 +1,11 @@
 import City from "./City";
-import Day from "./Day";
+import List from "./List";
 
 interface FullInfo {
   cod: string;
   message: number;
   cnt: number;
-  list: Day[];
+  list: List[];
   city: City;
 }
 
